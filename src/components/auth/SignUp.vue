@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -61,7 +63,24 @@ export default {
       terms: false
     };
   },
-  methods: {}
+  methods: {
+    onSubmit() {
+      const formData = {
+        email: this.email,
+        age: this.age,
+        password: this.password,
+        confirmPassword: this.confirmPassword,
+        country: this.country,
+        terms: this.terms
+      };
+      axios
+        .post("https://etf-portfolio.firebaseio.com/users.json", formData)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => console.log(error));
+    }
+  }
 };
 </script>
 
