@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <router-link to="/" class="navbar-brand">Stock Trader</router-link>
+    <router-link to="/" class="navbar-brand">ETF Portfolio</router-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -46,8 +46,16 @@
             <a class="dropdown-item" href="#" @click="loadData">Load Data</a>
           </div>
         </li>
+        <li>
+          <strong class="navbar-text navbar-right">Funds: {{ funds | currency}}</strong>
+        </li>
+        <router-link to="/signin" class="nav-item" activeClass="active" tag="li">
+          <a class="nav-link">Sign In</a>
+        </router-link>
+        <router-link to="/signup" class="nav-item" activeClass="active" tag="li">
+          <a class="nav-link btn btn-success">Sign Up</a>
+        </router-link>
       </ul>
-      <strong class="navbar-text navbar-right">Funds: {{ funds | currency}}</strong>
     </div>
   </nav>
 </template>
