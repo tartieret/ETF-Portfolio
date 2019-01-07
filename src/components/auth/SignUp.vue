@@ -1,6 +1,7 @@
 <template>
-  <div class="row">
-    <div class="signup-form">
+  <div class="row align-items-center">
+    <div class="col-xs-8 col-md-4 col-lg-3 signin-form">
+      <h4>Sign Up</h4>
       <form @submit.prevent="onSubmit">
         <div class="form-group">
           <label for="email">Email</label>
@@ -9,10 +10,6 @@
             id="emailHelp"
             class="form-text text-muted"
           >We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="age">Your Age</label>
-          <input type="number" class="form-control" id="age" v-model.number="age">
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -26,6 +23,10 @@
             id="confirm-password"
             v-model="confirmPassword"
           >
+        </div>
+        <div class="form-group">
+          <label for="age">Your Age</label>
+          <input type="number" class="form-control" id="age" v-model.number="age">
         </div>
         <div class="form-group">
           <label for="country">Country</label>
@@ -74,7 +75,7 @@ export default {
         terms: this.terms
       };
       axios
-        .post("https://etf-portfolio.firebaseio.com/users.json", formData)
+        .post("/users.json", formData)
         .then(response => {
           console.log(response);
         })
@@ -86,8 +87,7 @@ export default {
 
 
 <style scoped>
-.signup-form {
-  width: 400px;
+.signin-form {
   margin: 30px auto;
   border: 1px solid #eee;
   padding: 20px;

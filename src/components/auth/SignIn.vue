@@ -1,17 +1,19 @@
 <template>
-  <div id="signin">
-    <div class="signin-form">
+  <div class="row align-items-center">
+    <div class="col-xs-8 col-md-4 col-lg-3 signin-form">
+      <h4>Sign In</h4>
       <form @submit.prevent="onSubmit">
-        <div class="input">
-          <label for="email">Mail</label>
-          <input type="email" id="email" v-model="email">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" v-model="email">
         </div>
-        <div class="input">
+        <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" v-model="password">
+          <input type="password" class="form-control" id="password" v-model="password">
         </div>
+        <p>Don't have an account? <router-link to="/signup">Create one!</router-link> </p>
         <div class="submit">
-          <button type="submit">Submit</button>
+          <button type="submit" class="btn btn-primary">Sign In</button>
         </div>
       </form>
     </div>
@@ -39,58 +41,11 @@ export default {
 </script>
 
 <style scoped>
+
 .signin-form {
-  width: 400px;
   margin: 30px auto;
   border: 1px solid #eee;
   padding: 20px;
   box-shadow: 0 2px 3px #ccc;
-}
-
-.input {
-  margin: 10px auto;
-}
-
-.input label {
-  display: block;
-  color: #4e4e4e;
-  margin-bottom: 6px;
-}
-
-.input input {
-  font: inherit;
-  width: 100%;
-  padding: 6px 12px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-}
-
-.input input:focus {
-  outline: none;
-  border: 1px solid #521751;
-  background-color: #eee;
-}
-
-.submit button {
-  border: 1px solid #521751;
-  color: #521751;
-  padding: 10px 20px;
-  font: inherit;
-  cursor: pointer;
-}
-
-.submit button:hover,
-.submit button:active {
-  background-color: #521751;
-  color: white;
-}
-
-.submit button[disabled],
-.submit button[disabled]:hover,
-.submit button[disabled]:active {
-  border: 1px solid #ccc;
-  background-color: transparent;
-  color: #ccc;
-  cursor: not-allowed;
 }
 </style>

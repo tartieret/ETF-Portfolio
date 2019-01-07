@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
+import axios from 'axios';
 
 import App from './App.vue';
 import {
@@ -8,6 +9,8 @@ import {
 } from './routes';
 import store from './store/store';
 var numeral = require('numeral');
+
+axios.defaults.baseURL = 'https://etf-portfolio.firebaseio.com';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
